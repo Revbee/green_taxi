@@ -1,0 +1,69 @@
+###
+### A complete description of a Prefect Deployment for flow 'etl-parent-flow'
+###
+name: green_taxi_github_bq
+description: null
+version: 65afd8e9268fb3c37efd0a68ed1490c1
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+work_pool_name: null
+tags: []
+parameters: {}
+schedule: null
+is_schedule_active: null
+infra_overrides: {}
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  block_type_slug: process
+  _block_type_slug: process
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: etl-parent-flow
+manifest_path: null
+storage:
+  repository: https://github.com/Revbee/green_taxi
+  reference: null
+  access_token: null
+  include_git_objects: true
+  _block_document_id: a221860b-c25e-4c9a-857c-a4995e30a300
+  _block_document_name: git-block
+  _is_anonymous: false
+  block_type_slug: github
+  _block_type_slug: github
+path: ''
+entrypoint: flows/etl_gcs_to_bq.py:etl_parent_flow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    color:
+      title: color
+      default: green
+      position: 0
+      type: string
+    year:
+      title: year
+      default: 2020
+      position: 1
+      type: integer
+    months:
+      title: months
+      default:
+      - 1
+      - 2
+      position: 2
+      type: array
+      items:
+        type: integer
+  required: null
+  definitions: null
+timestamp: '2023-06-24T21:59:45.312892+00:00'
+triggers: []

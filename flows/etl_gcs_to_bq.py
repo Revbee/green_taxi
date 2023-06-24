@@ -11,10 +11,8 @@ def extract_from_gcs(color: str, year: int, month: int) -> Path:
     dataset_file = f"{color}_tripdata_{year}-{month:02}"
     gcs_path = f"data/{color}/{dataset_file}.parquet"
     gcp_cloud_storage_bucket_block = GcsBucket.load("green-data-block")
-    gcp_cloud_storage_bucket_block.get_directory(
-        from_path=gcs_path, local_path=f"data/{color}/"
-    )
-    return Path(f"{gcs_path}")
+    gcp_cloud_storage_bucket_block.get_directory(from_path=gcs_path, local_path=f"../")
+    return Path(f"../{gcs_path}")
 
 
 @task(log_prints=True)
