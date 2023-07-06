@@ -13,7 +13,8 @@ def fetch_data(dataset_url: str) -> pd.DataFrame:
 
 @task(log_prints=True)
 def clean(df: pd.DataFrame) -> pd.DataFrame:
-    print(f"the data contains {len(df)} rows")
+    df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
+    df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
     return df
 
 
