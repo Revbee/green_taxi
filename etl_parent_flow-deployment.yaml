@@ -1,9 +1,9 @@
 ###
 ### A complete description of a Prefect Deployment for flow 'etl-parent-flow'
 ###
-name: green_taxi_to_gcs
+name: fhv_taxi_to_gcs
 description: null
-version: 919c93c98758433c416df9facd9933c9
+version: d18573abc5cb2b0151960a707f431457
 # The work queue that will handle this deployment's runs
 work_queue_name: default
 work_pool_name: null
@@ -46,7 +46,7 @@ parameter_openapi_schema:
   properties:
     color:
       title: color
-      default: green
+      default: fhv
       position: 0
       type: string
     year:
@@ -65,5 +65,5 @@ parameter_openapi_schema:
         type: integer
   required: null
   definitions: null
-timestamp: '2023-07-06T14:35:08.000818+00:00'
+timestamp: '2023-07-14T15:23:08.312295+00:00'
 triggers: []
