@@ -35,7 +35,7 @@ def etl_web_to_gcp(color: str, year: int, month: int) -> None:
 
 
 @flow()
-def etl_parent_flow(color: str = "fhv", year: int = 2020, months: list[int] = [1, 2]):
+def etl_parent_flow(color: str = "fhv", year: int = 2019, months: list[int] = [1, 2]):
     for month in months:
         etl_web_to_gcp(color, year, month)
 
