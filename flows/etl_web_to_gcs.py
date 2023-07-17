@@ -5,7 +5,7 @@ from prefect.tasks import task_input_hash
 from prefect_gcp.cloud_storage import GcsBucket
 
 
-@task(log_prints=True retries=2)
+@task(log_prints=True, retries=2)
 def fetch_data(dataset_url: str) -> pd.DataFrame:
     df = pd.read_csv(dataset_url)
     return df
