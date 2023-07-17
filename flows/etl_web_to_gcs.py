@@ -46,6 +46,4 @@ if __name__ == "__main__":
     months = [1, 2, 3]
     etl_parent_flow(color, year, months)
 
-# In[ ]:
-https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2020-01.csv.gz
-https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2020-02.csv.gz
+# In[ ]
