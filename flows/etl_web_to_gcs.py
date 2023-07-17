@@ -5,7 +5,7 @@ from prefect.tasks import task_input_hash
 from prefect_gcp.cloud_storage import GcsBucket
 
 
-@task(log_prints=True, retries=2)
+@task(log_prints=True)
 def fetch_data(dataset_url: str) -> pd.DataFrame:
     df = pd.read_csv(dataset_url)
     return df
@@ -35,7 +35,7 @@ def etl_web_to_gcp(color: str, year: int, month: int) -> None:
 
 
 @flow()
-def etl_parent_flow(color: str = "fhv", year: int = 2021, months: list[int] = [1, 2]):
+def etl_parent_flow(color: str = "fhv", year: int = 2020, months: list[int] = [1, 2]):
     for month in months:
         etl_web_to_gcp(color, year, month)
 
@@ -43,7 +43,7 @@ def etl_parent_flow(color: str = "fhv", year: int = 2021, months: list[int] = [1
 if __name__ == "__main__":
     color = "fhv"
     year = 2020
-    months = [1, 2, 3]
+    months = [1, 2]
     etl_parent_flow(color, year, months)
 
 # In[ ]
