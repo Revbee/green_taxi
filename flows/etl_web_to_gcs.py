@@ -5,7 +5,7 @@ from prefect.tasks import task_input_hash
 from prefect_gcp.cloud_storage import GcsBucket
 
 
-@task(log_prints=True)
+@task(log_prints=True retries=2)
 def fetch_data(dataset_url: str) -> pd.DataFrame:
     df = pd.read_csv(dataset_url)
     return df
@@ -47,3 +47,5 @@ if __name__ == "__main__":
     etl_parent_flow(color, year, months)
 
 # In[ ]:
+https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2020-01.csv.gz
+https://github.com/DataTalksClub/nyc-tlc-data/releases/download/fhv/fhv_tripdata_2020-02.csv.gz
