@@ -28,10 +28,9 @@ def write_to_gcs(path: Path) -> None:
 @flow()
 def etl_web_to_gcp(color: str, year: int, month: int) -> None:
     dataset_file = f"{color}_tripdata_{year}-{month:02}"
-    dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/tag/{color}/{dataset_file}.csv.gz"
+    dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/{color}/{dataset_file}.csv.gz"
     df = fetch_data(dataset_url)
-    df_clean = clean(df)
-    path = write_to_local(df_clean, color, dataset_file)
+    path = write_to_local(df, color, dataset_file)
     write_to_gcs(path)
 
 

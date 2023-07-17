@@ -3,15 +3,21 @@
 ###
 name: fhv_taxi_to_gcs
 description: null
-version: d18573abc5cb2b0151960a707f431457
+version: 98befb3e305914004e4a2189e0b74f0e
 # The work queue that will handle this deployment's runs
 work_queue_name: default
-work_pool_name: null
+work_pool_name: default-agent-pool
 tags: []
 parameters: {}
 schedule: null
-is_schedule_active: null
+is_schedule_active: true
 infra_overrides: {}
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: etl-parent-flow
+manifest_path: null
 infrastructure:
   type: process
   env: {}
@@ -20,14 +26,11 @@ infrastructure:
   command: null
   stream_output: true
   working_dir: null
+  _block_document_id: a968a363-2008-4d97-8f32-e6f3b3ea77ec
+  _block_document_name: anonymous-e8ce0f53-31f3-444f-ad23-7f01abafe43a
+  _is_anonymous: true
   block_type_slug: process
   _block_type_slug: process
-
-###
-### DO NOT EDIT BELOW THIS LINE
-###
-flow_name: etl-parent-flow
-manifest_path: null
 storage:
   repository: https://github.com/Revbee/green_taxi
   reference: null
@@ -65,5 +68,5 @@ parameter_openapi_schema:
         type: integer
   required: null
   definitions: null
-timestamp: '2023-07-14T15:23:08.312295+00:00'
+timestamp: '2023-07-14T16:05:36.439160+00:00'
 triggers: []
